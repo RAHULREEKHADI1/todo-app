@@ -16,7 +16,6 @@ function Home() {
         const response = await axios.get("https://todo-app-backend-aav1.onrender.com/todo/fetch",{
           withCredentials:true,
           headers:{
-            Authorization: `Bearer ${localStorage.getItem('token')}` // 👈 Must match backend expectation
             "Content-Type":"application/json",  
           }
         })
