@@ -34,7 +34,7 @@ export const register = async (req,res)=>{
         if(newUser){
             const token = await generateTokenAndSaveInCookies(newUser._id,res);
             res.status(201).json({
-                message:"User registered successfully ", newUser
+                message:"User registered successfully ", newUser,token
             })
         }       
     }catch(error){
