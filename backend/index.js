@@ -35,14 +35,6 @@ try{
 
 app.use("/todo",todoRoute);
 app.use("/user",userRoute);
-
-app.get('/',(req,res)=>{
-    res.send("Hello world!")
-})
-
-
-
-
 app.listen(PORT,()=>{
     console.log(`Server is running on PORT ${PORT}`)
 })
