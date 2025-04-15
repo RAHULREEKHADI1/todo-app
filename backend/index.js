@@ -27,6 +27,7 @@ app.use(cors({
     methods:"GET,POST,PUT,DELETE",
     allowedHeaders:["Content-Type","Authorization"]//add other header you want to allow
 }))
+app.options('*', cors());
 try{
     await mongoose.connect(DB_URI);
     console.log("Connected to MongoDB");
