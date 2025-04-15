@@ -21,7 +21,7 @@ app.use(cookieParser());
 app.use(cors({
     origin:[
         process.env.FRONTEND_URL,
-        "https://todo-app-backend-aav1.onrender.com"
+        "https://todo-app-frontend-kjn0.onrender.com"
         ],
     credentials:true,
     methods:"GET,POST,PUT,DELETE",
