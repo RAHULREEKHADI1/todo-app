@@ -12,7 +12,7 @@ function Login() {
   const handleRegister = async(e) => {
     e.preventDefault();
     try{
-      const {data} = await axios.post('http://localhost:4001/user/login',{
+      const {data} = await axios.post('https://todo-app-backend-hfzb.onrender.com/user/login',{
         email,
         password,
       },{
