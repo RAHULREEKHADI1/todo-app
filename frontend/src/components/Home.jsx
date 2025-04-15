@@ -13,7 +13,7 @@ function Home() {
     const fetchTodos = async()=>{
       try{
         setLoading(true)
-        const response = await axios.get("https://todo-app-backend-aav1.onrender.com/todo/fetch",{
+        const response = await axios.get("http://localhost:4001/todo/fetch",{
           withCredentials:true,
           headers:{
             "Content-Type":"application/json",  
@@ -34,7 +34,7 @@ function Home() {
   const todoCreate=async ()=>{
     if(!newTodo)return;
     try{
-      const response  = await axios.post("https://todo-app-backend-aav1.onrender.com/todo/create",{
+      const response  = await axios.post("http://localhost:4001/todo/create",{
         title:newTodo,
         completed:false,
       },{
@@ -52,7 +52,7 @@ function Home() {
     const todo = todos.find((t) => t._id === id);
     try {
       const response = await axios.put(
-        `https://todo-app-backend-aav1.onrender.com/todo/update/${id}`,
+        `http://localhost:4001/todo/update/${id}`,
         {
           ...todo,
           completed: !todo.completed,
@@ -70,7 +70,7 @@ function Home() {
 
   const todoDelete = async(id)=>{
     try{
-      await axios.delete(`https://todo-app-backend-aav1.onrender.com/delete/${id}`,{
+      await axios.delete(`http://localhost:4001/delete/${id}`,{
         withCredentials:true
       })
       setTodos(todos.filter((t)=>t._id!==id))
@@ -81,7 +81,7 @@ function Home() {
   const navigateTo = useNavigate();
   const logout = async()=>{
     try{
-      await axios.get("https://todo-app-backend-aav1.onrender.com/user/logout",{
+      await axios.get("http://localhost:4001/user/logout",{
         withCredentials:true,
       })
       toast.success("User logged out successfully")
