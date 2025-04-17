@@ -70,7 +70,7 @@ function Home() {
 
   const todoDelete = async(id)=>{
     try{
-      await axios.delete(`https://todo-app-backend-hfzb.onrender.com/delete/${id}`,{
+      await axios.delete(`https://todo-app-backend-hfzb.onrender.com/todo/delete/${id}`,{
         withCredentials:true
       })
       setTodos(todos.filter((t)=>t._id!==id))
