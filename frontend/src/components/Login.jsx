@@ -21,9 +21,10 @@ function Login() {
           "Content-type":"application/json"
         }
       })
-      toast.success(data.message || "User logged in successfully")
+      
       localStorage.setItem("jwt",data.token);
-      navigateTo("/")
+      navigateTo("/");
+      toast.success(data.message || "User logged in successfully")
       setEmail("")
       setPassword("")
     }
