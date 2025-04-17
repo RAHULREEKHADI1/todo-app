@@ -9,6 +9,7 @@ export const generateTokenAndSaveInCookies = async (userId, res) => {
     httpOnly: true,
     secure: false,
     sameSite: "lax",
+     maxAge: 10 * 24 * 60 * 60 * 1000,
     path: "/",
   });
 
