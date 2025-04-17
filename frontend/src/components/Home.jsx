@@ -16,7 +16,8 @@ function Home() {
         const response = await axios.get("https://todo-app-backend-hfzb.onrender.com/todo/fetch",{
           withCredentials:true,
           headers:{
-            "Content-Type":"application/json",  
+            "Content-Type":"application/json",'
+              'Authorization': `Bearer ${localStorage.getItem('jwt') || ''}`
           }
         })
         console.log(response.data.todos)
