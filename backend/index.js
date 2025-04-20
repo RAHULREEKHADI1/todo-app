@@ -4,6 +4,8 @@ import mongoose from "mongoose";
 import cors from "cors";
 import cookieParser from "cookie-parser";
 
+
+const app = express();
 //MiddleWares
 app.use(express.json());
 app.use(cookieParser());
@@ -20,8 +22,6 @@ app.options('*', cors());
 
 import todoRoute from "../backend/routes/todo.routes.js"
 import userRoute from "../backend/routes/user.routes.js"
-
-const app = express();
 
 dotenv.config();
 
