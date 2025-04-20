@@ -4,17 +4,6 @@ import mongoose from "mongoose";
 import cors from "cors";
 import cookieParser from "cookie-parser";
 
-import todoRoute from "../backend/routes/todo.routes.js"
-import userRoute from "../backend/routes/user.routes.js"
-
-const app = express();
-
-dotenv.config();
-
-const PORT = process.env.PORT || 4002;
-const DB_URI=process.env.MONGODB_URI;
-//Database Connectivity
-
 //MiddleWares
 app.use(express.json());
 app.use(cookieParser());
@@ -28,6 +17,19 @@ app.use(cors({
     allowedHeaders:["Content-Type","Authorization"]//add other header you want to allow
 }))
 app.options('*', cors());
+
+import todoRoute from "../backend/routes/todo.routes.js"
+import userRoute from "../backend/routes/user.routes.js"
+
+const app = express();
+
+dotenv.config();
+
+const PORT = process.env.PORT || 4002;
+const DB_URI=process.env.MONGODB_URI;
+//Database Connectivity
+
+
 try{
     await mongoose.connect(DB_URI);
     console.log("Connected to MongoDB");
